@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://lsr3bfvrr2me"]
+
+[ext_resource type="Script" path="res://scenes/hud/hud_manager.gd" id="1_22oi0"]
+[ext_resource type="Script" path="res://scenes/hud/health_display_container_controller.gd" id="1_rjrf4"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_22oi0")
+
+[node name="Health" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthDisplayContainer" type="HBoxContainer" parent="Health" node_paths=PackedStringArray("hud_manager")]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 59.0
+offset_bottom = 14.0
+theme_override_constants/separation = 5
+script = ExtResource("1_rjrf4")
+hud_manager = NodePath("../..")
+
+[node name="ColorRect" type="ColorRect" parent="Health/HealthDisplayContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Health/HealthDisplayContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="Health/HealthDisplayContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="Health/HealthDisplayContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="XP" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="XPBar" type="ProgressBar" parent="XP"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 349.0
+offset_right = 607.0
+offset_bottom = 360.0
+show_percentage = false

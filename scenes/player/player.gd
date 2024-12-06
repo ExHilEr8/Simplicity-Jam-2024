@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var sprite = Sprite2D
 @export var speed : float = 400
+@export var player_health_component : PlayerHealthComponent 
 
 var character_direction : Vector2 = Vector2.ZERO
 var character_velocity : Vector2 = Vector2.ZERO

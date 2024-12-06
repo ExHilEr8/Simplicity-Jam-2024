@@ -1,21 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuvf3uuekw8t1"]
+[gd_scene load_steps=5 format=3 uid="uid://cuvf3uuekw8t1"]
 
-[ext_resource type="Script" path="res://scenes/player/player_movement.gd" id="1_0xjot"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_0xjot"]
 [ext_resource type="Texture2D" uid="uid://i3qc7g5b024d" path="res://icon.svg" id="1_pv0ly"]
+[ext_resource type="PackedScene" uid="uid://cbnqqpk4u2qhg" path="res://scenes/player/player_health_component.tscn" id="3_ps8dq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mamc8"]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "player_health_component")]
 script = ExtResource("1_0xjot")
 sprite = NodePath("Icon")
+player_health_component = NodePath("PlayerHealthComponent")
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_pv0ly")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(29.5, 27.5)
 scale = Vector2(0.414063, 0.414063)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mamc8")
+
+[node name="PlayerHealthComponent" parent="." instance=ExtResource("3_ps8dq")]

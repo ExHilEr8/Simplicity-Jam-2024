@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://i87qqn7wlfqy"]
+[gd_scene load_steps=4 format=3 uid="uid://i87qqn7wlfqy"]
 
 [ext_resource type="Texture2D" uid="uid://i3qc7g5b024d" path="res://icon.svg" id="1_2mpyd"]
 [ext_resource type="PackedScene" uid="uid://cuvf3uuekw8t1" path="res://scenes/player/player.tscn" id="1_66nd6"]
+[ext_resource type="PackedScene" uid="uid://lsr3bfvrr2me" path="res://scenes/hud/hud.tscn" id="3_kpqtu"]
 
 [node name="Main" type="Node2D"]
 
@@ -11,3 +12,8 @@ position = Vector2(-84.9326, -41.6416)
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(110, 99)
 texture = ExtResource("1_2mpyd")
+
+[node name="HudCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="HudCanvasLayer" node_paths=PackedStringArray("player_reference") instance=ExtResource("3_kpqtu")]
+player_reference = NodePath("../../Player")
