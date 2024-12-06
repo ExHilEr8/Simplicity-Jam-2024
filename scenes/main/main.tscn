@@ -1,12 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://i87qqn7wlfqy"]
+[gd_scene load_steps=3 format=3 uid="uid://i87qqn7wlfqy"]
 
-[ext_resource type="Texture2D" uid="uid://bsvx8i82q6823" path="res://scenes/main/banner.png" id="1_cq5vb"]
+[ext_resource type="Texture2D" uid="uid://i3qc7g5b024d" path="res://icon.svg" id="1_2mpyd"]
+[ext_resource type="PackedScene" uid="uid://cuvf3uuekw8t1" path="res://scenes/player/player.tscn" id="1_66nd6"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Banner" type="Sprite2D" parent="."]
-position = Vector2(331, 130)
-texture = ExtResource("1_cq5vb")
+[node name="Player" parent="." instance=ExtResource("1_66nd6")]
+position = Vector2(-84.9326, -41.6416)
 
-[node name="Camera2D" type="Camera2D" parent="Banner"]
-zoom = Vector2(1.225, 1.225)
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(110, 99)
+texture = ExtResource("1_2mpyd")
