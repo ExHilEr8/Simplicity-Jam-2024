@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://cvrisleq1dkcn"]
+[gd_scene load_steps=2 format=3 uid="uid://cvrisleq1dkcn"]
+
+[ext_resource type="Script" path="res://scenes/components/enemy_health_component.gd" id="1_fafj4"]
 
 [node name="EnemyHealthComponent" type="Node2D"]
+script = ExtResource("1_fafj4")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -16.0
+offset_top = -2.0
+offset_right = 16.0
+offset_bottom = 2.0
+rounded = true
+show_percentage = false
